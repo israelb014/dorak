@@ -1,0 +1,201 @@
+.card {
+  position: relative;
+  border-radius: var(--r-card);
+  background: linear-gradient(160deg, var(--card-bg) 0%, var(--card-bg-2) 100%);
+  box-shadow: var(--shadow-card);
+  color: var(--card-ink);
+  width: var(--card-w);
+  height: var(--card-h);
+  flex: none;
+  overflow: hidden;
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.table {
+  width: var(--card-w);
+  height: var(--card-h);
+}
+
+.hand {
+  width: var(--hand-w);
+  height: var(--hand-h);
+}
+
+.mini {
+  width: var(--mini-w);
+  height: var(--mini-h);
+  border-radius: 4px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--card-bg);
+  color: var(--card-ink);
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 1.3;
+  vertical-align: middle;
+  margin: 0 3px;
+}
+
+.red {
+  color: var(--card-red);
+}
+
+.black {
+  color: var(--card-ink);
+}
+
+.chip.red {
+  color: var(--card-red);
+}
+
+.corner {
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  direction: ltr;
+}
+
+.cornerBottom {
+  top: auto;
+  left: auto;
+  right: 6px;
+  bottom: 6px;
+  transform: rotate(180deg);
+}
+
+.rank {
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+}
+
+.hand .rank {
+  font-size: 18px;
+}
+
+.cornerSuit {
+  width: 11px;
+  height: 11px;
+}
+
+.hand .cornerSuit {
+  width: 13px;
+  height: 13px;
+}
+
+.centerSuit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40%;
+  height: 40%;
+  transform: translate(-50%, -50%);
+  opacity: 0.92;
+}
+
+.trump {
+  box-shadow: var(--shadow-card), 0 0 0 2px var(--gold);
+}
+
+.legal {
+  box-shadow: var(--shadow-card), 0 0 0 2px rgba(214, 178, 94, 0.55), 0 0 14px rgba(214, 178, 94, 0.25);
+}
+
+.selected {
+  box-shadow: var(--shadow-card), 0 0 0 3px var(--gold), 0 0 18px rgba(214, 178, 94, 0.45);
+}
+
+.dimmed {
+  filter: saturate(0.4) brightness(0.62);
+}
+
+.back {
+  background:
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.07) 0 3px, transparent 3px 8px),
+    linear-gradient(160deg, var(--card-back-1), var(--card-back-2));
+  box-shadow: var(--shadow-card);
+}
+
+.backInner {
+  position: absolute;
+  inset: 4px;
+  border-radius: calc(var(--r-card) - 4px);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+}
+
+.mini .backInner {
+  inset: 2px;
+  border-radius: 2px;
+  border-width: 1px;
+}
+
+.fromTop {
+  animation: from-top var(--t-slow) var(--ease) both;
+}
+
+.fromBottom {
+  animation: from-bottom var(--t-slow) var(--ease) both;
+}
+
+.defense {
+  animation: defense var(--t-slow) var(--ease) both;
+}
+
+.draw {
+  animation: draw var(--t-slow) var(--ease) both;
+}
+
+@keyframes from-top {
+  from {
+    transform: translateY(-140px) scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes from-bottom {
+  from {
+    transform: translateY(160px) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes defense {
+  from {
+    transform: translate(30px, 70px) rotate(-22deg) scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes draw {
+  from {
+    transform: translate(-60px, -40px) rotate(-6deg);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+}

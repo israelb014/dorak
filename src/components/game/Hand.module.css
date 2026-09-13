@@ -1,0 +1,30 @@
+.hand {
+  position: relative;
+  height: calc(var(--hand-h) + 22px);
+  direction: ltr;
+  overflow: visible;
+  margin: 0 var(--s-2);
+}
+
+.slot {
+  position: absolute;
+  left: 0;
+  top: 16px;
+  width: var(--hand-w);
+  height: var(--hand-h);
+  transform-origin: 50% 110%;
+  transition: transform var(--t-med) var(--ease);
+  touch-action: none;
+}
+
+.slot > * {
+  transition: box-shadow var(--t-fast) var(--ease), filter var(--t-fast) var(--ease);
+}
+
+.playable {
+  cursor: grab;
+}
+
+.playable:active {
+  cursor: grabbing;
+}

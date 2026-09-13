@@ -1,0 +1,28 @@
+.log {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 4px var(--s-3);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  pointer-events: none;
+  min-height: 54px;
+  justify-content: flex-end;
+}
+
+.line {
+  display: block;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 18px;
+  animation: log-in var(--t-med) var(--ease) both;
+}
+
+@keyframes log-in {
+  from {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+}

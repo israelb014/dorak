@@ -1,0 +1,152 @@
+.summary {
+  display: flex;
+  align-items: center;
+  gap: var(--s-4);
+}
+
+.ringInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.ringBig {
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.ringSmall {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.tiles {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s-2);
+}
+
+.tile {
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.tileValue {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.tileLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.streaks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-2);
+}
+
+.streak {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(214, 178, 94, 0.08);
+  box-shadow: 0 0 0 1px rgba(214, 178, 94, 0.25) inset;
+}
+
+.streakIcon {
+  color: var(--gold);
+  flex: none;
+}
+
+.streakValue {
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.streakLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.rowRate {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.rowBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.rowTitle {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.rowMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.rowStreak {
+  text-align: center;
+  flex: none;
+}
+
+.rowStreakValue {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.rowStreakLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.confirm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.confirmText {
+  font-weight: 700;
+}
+
+.confirmButtons {
+  display: flex;
+  gap: var(--s-2);
+}

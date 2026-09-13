@@ -1,0 +1,107 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  border-radius: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  transition:
+    transform var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease),
+    opacity var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+  white-space: nowrap;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(1px) scale(0.985);
+}
+
+.btn:disabled {
+  opacity: 0.38;
+}
+
+.md {
+  min-height: 48px;
+  padding: 0 var(--s-4);
+  font-size: 17px;
+}
+
+.lg {
+  min-height: 60px;
+  padding: 0 var(--s-5);
+  font-size: 20px;
+}
+
+.sm {
+  min-height: 38px;
+  padding: 0 var(--s-3);
+  font-size: 15px;
+  border-radius: 11px;
+}
+
+.block {
+  width: 100%;
+}
+
+.primary {
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+  color: #06140c;
+  box-shadow: 0 6px 16px rgba(47, 158, 107, 0.35), 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+}
+
+.primary:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+
+.secondary {
+  background: var(--panel-2);
+  color: var(--text);
+  box-shadow: 0 0 0 1px var(--line) inset, 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.secondary:hover:not(:disabled) {
+  background: var(--panel-3);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--muted);
+  box-shadow: 0 0 0 1px var(--line) inset;
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--text);
+}
+
+.danger {
+  background: rgba(200, 75, 69, 0.16);
+  color: #f3b3af;
+  box-shadow: 0 0 0 1px rgba(200, 75, 69, 0.45) inset;
+}
+
+.icon {
+  display: inline-flex;
+  flex: none;
+}
+
+.iconBtn {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 0 1px var(--line) inset;
+  transition: background-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+
+.iconBtn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.iconBtn:active:not(:disabled) {
+  transform: scale(0.95);
+}

@@ -1,0 +1,59 @@
+.group {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 0 1px var(--line) inset;
+}
+
+.option {
+  flex: 1;
+  min-height: 40px;
+  border-radius: 9px;
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--muted);
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease);
+}
+
+.option:active {
+  transform: scale(0.97);
+}
+
+.selected {
+  background: var(--panel-3);
+  color: var(--text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(214, 178, 94, 0.35) inset;
+}
+
+.toggle {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0 1px var(--line) inset;
+  transition: background-color var(--t-med) var(--ease);
+  flex: none;
+}
+
+.on {
+  background: var(--accent);
+}
+
+.knob {
+  position: absolute;
+  top: 3px;
+  inset-inline-start: 3px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  transition: transform var(--t-med) var(--ease);
+}
+
+.on .knob {
+  transform: translateX(-24px);
+}

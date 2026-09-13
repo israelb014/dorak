@@ -1,0 +1,53 @@
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+}
+
+.rowInline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.label {
+  font-weight: 800;
+  font-size: 16px;
+}
+
+.help {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+}
+
+.fieldMuted {
+  opacity: 0.55;
+}
+
+.input {
+  font: inherit;
+  font-weight: 700;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 12px;
+  width: 160px;
+  box-shadow: 0 0 0 1px var(--line) inset;
+  outline: none;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2px var(--gold-soft) inset;
+}

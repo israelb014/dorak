@@ -1,0 +1,89 @@
+.deckWrap,
+.discardWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+}
+
+.deck {
+  position: relative;
+  width: calc(var(--card-w) + 24px);
+  height: var(--card-h);
+  direction: ltr;
+}
+
+.deckCard {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.trumpCard {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease);
+}
+
+.trumpGone {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.7);
+}
+
+.badge {
+  position: absolute;
+  right: -6px;
+  top: -8px;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: #1b1a17;
+  font-weight: 800;
+  font-size: 12px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.trumpLabel,
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+}
+
+.red {
+  color: #ff7b76;
+}
+
+.white {
+  color: var(--text);
+}
+
+.discard {
+  position: relative;
+  width: var(--card-w);
+  height: var(--card-h);
+}
+
+.discardSlot {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-card);
+  border: 2px dashed rgba(255, 255, 255, 0.12);
+}
+
+.discardCard {
+  position: absolute;
+  inset: 0;
+  filter: brightness(0.75);
+}

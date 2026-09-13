@@ -1,0 +1,143 @@
+:root {
+  --felt-1: #0b1f16;
+  --felt-2: #071410;
+  --felt-glow: rgba(64, 160, 110, 0.22);
+  --card-bg: #f6f2ea;
+  --card-bg-2: #ebe5d8;
+  --card-ink: #1b1a17;
+  --card-red: #b4302e;
+  --card-back-1: #1d4d8a;
+  --card-back-2: #0f2f57;
+  --gold: #d6b25e;
+  --gold-soft: rgba(214, 178, 94, 0.35);
+  --text: #eee9dd;
+  --muted: #98ac9f;
+  --line: rgba(255, 255, 255, 0.08);
+  --panel: #10281d;
+  --panel-2: #163526;
+  --panel-3: #1d4331;
+  --accent: #2f9e6b;
+  --accent-2: #37b87b;
+  --danger: #c84b45;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+  --shadow-card: 0 4px 10px rgba(0, 0, 0, 0.45), 0 1px 0 rgba(255, 255, 255, 0.35) inset;
+  --r-card: 12px;
+  --r-panel: 16px;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --speed: 1;
+  --t-fast: calc(180ms * var(--speed));
+  --t-med: calc(240ms * var(--speed));
+  --t-slow: calc(320ms * var(--speed));
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --font: 'Heebo', 'Assistant', 'Segoe UI', Arial, sans-serif;
+  --card-w: 56px;
+  --card-h: 80px;
+  --hand-w: 66px;
+  --hand-h: 94px;
+  --mini-w: 18px;
+  --mini-h: 26px;
+  --max-w: 900px;
+  color-scheme: dark;
+}
+
+@media (max-width: 399px) {
+  :root {
+    --card-w: 50px;
+    --card-h: 72px;
+    --hand-w: 62px;
+    --hand-h: 88px;
+  }
+}
+
+@media (min-width: 640px) {
+  :root {
+    --card-w: 72px;
+    --card-h: 104px;
+    --hand-w: 84px;
+    --hand-h: 120px;
+    --mini-w: 22px;
+    --mini-h: 32px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 48%, var(--felt-glow), transparent 70%),
+    linear-gradient(180deg, var(--felt-1) 0%, var(--felt-2) 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  padding: 0;
+  touch-action: manipulation;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+svg {
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.app {
+  min-height: 100%;
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 1ms;
+    --t-med: 1ms;
+    --t-slow: 1ms;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+  }
+}

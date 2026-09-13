@@ -1,0 +1,134 @@
+.row {
+  display: flex;
+  justify-content: center;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-3);
+  min-height: 78px;
+}
+
+.opponent {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.045);
+  box-shadow: 0 0 0 1px var(--line) inset;
+  transition: background-color var(--t-med) var(--ease), box-shadow var(--t-med) var(--ease), opacity var(--t-med);
+  min-width: 0;
+}
+
+.active {
+  background: rgba(214, 178, 94, 0.08);
+  box-shadow: 0 0 0 1px rgba(214, 178, 94, 0.35) inset;
+}
+
+.out {
+  opacity: 0.45;
+}
+
+.avatarWrap {
+  position: relative;
+  flex: none;
+  width: 46px;
+  height: 46px;
+}
+
+.avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--panel-3);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.08);
+}
+
+.initial {
+  font-weight: 800;
+  font-size: 18px;
+  color: var(--text);
+}
+
+.role {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 10px;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 999px;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.roleAttack {
+  background: var(--danger);
+  color: #fff;
+}
+
+.roleDefend {
+  background: var(--accent);
+  color: #06140c;
+}
+
+.roleOut {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--text);
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.name {
+  font-weight: 800;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 82px;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  direction: ltr;
+}
+
+.fan {
+  position: relative;
+  height: var(--mini-h);
+}
+
+.mini {
+  position: absolute;
+  top: 0;
+  transform-origin: 50% 120%;
+}
+
+.count {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--muted);
+  min-width: 14px;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .name {
+    max-width: 58px;
+    font-size: 13px;
+  }
+  .opponent {
+    padding: 5px 7px;
+  }
+}
