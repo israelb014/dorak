@@ -3,7 +3,11 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { VitePWA } from 'vite-plugin-pwa';
 
+// GitHub Pages serves the site under /<repo>/, so the base path is injected by the workflow.
+const base = process.env.VITE_BASE_PATH ?? '/';
+
 export default defineConfig({
+  base,
   plugins: [
     react(),
     VitePWA({
@@ -17,8 +21,8 @@ export default defineConfig({
         dir: 'rtl',
         display: 'standalone',
         orientation: 'portrait',
-        start_url: '/',
-        scope: '/',
+        start_url: base,
+        scope: base,
         background_color: '#071410',
         theme_color: '#0b1f16',
         icons: [
@@ -30,7 +34,7 @@ export default defineConfig({
       },
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,webmanifest}'],
-        navigateFallback: 'index.html',
+        navigateFallback: `${base}index.html`,
       },
     }),
   ],
